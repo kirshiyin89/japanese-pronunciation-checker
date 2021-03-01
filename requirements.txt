@@ -1,0 +1,5 @@
+bokeh==2.3.0
+pykakasi==2.0.6
+PyAudio==0.2.11
+requests==2.22.0
+streamlit==0.77.0
