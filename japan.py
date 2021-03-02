@@ -1,10 +1,8 @@
 import requests
 import json
 import pykakasi
-import pyaudio
 import streamlit as st
 import random
-import sys
 from bokeh.models.widgets import Button
 from bokeh.models import CustomJS
 from Recorder import record_audio, read_audio
@@ -44,9 +42,7 @@ def recognize_speech(audiofile, duration):
 def get_romaji(duration):
     text =  recognize_speech('myspeech.wav', duration)
     romaji = ''
-    if not text:
-    	st.write("Unrecognized audio. Try again.")
-    else:
+    if text:
     	print("\nYou said: {}".format(text))
     	print("**************************************")    
     	kks = pykakasi.kakasi()
@@ -97,6 +93,8 @@ if __name__ == "__main__":
             user_input = get_romaji(duration)
             if user_input != '':
             	result_message.text('You said: ' + user_input + ' which is: ' + evaluate_speech(session_state.selected_word, user_input))
+            else:
+            	st.write("Unrecognized audio. Try again.")
 
     
 
