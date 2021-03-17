@@ -1,2 +1,1 @@
-pip install streamlit
-web: streamlit run japan.py
+web: pip install streamlit && streamlit run japan.py
