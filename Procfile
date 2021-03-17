@@ -1,1 +1,1 @@
-web: streamlit run japan.py
+web: sh setup.sh && streamlit run japan.py
