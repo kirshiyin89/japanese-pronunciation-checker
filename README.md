@@ -1,6 +1,8 @@
 # Japanese Pronunciation Checker with Wit.ai and Python
 
-## This project is a demo for my technical article on Medium.com
+## This project is a demo for my technical article on Medium.com:
+
+https://betterprogramming.pub/how-to-build-a-japanese-pronunciation-checker-with-python-and-wit-ai-7f25d63c896d
 
 ## **How to start this project**
 
