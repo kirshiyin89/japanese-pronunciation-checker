@@ -8,11 +8,8 @@ def record_audio(duration, filename):
     RATE = 44100
     CHUNK = 1024
 
-    audio = pyaudio.PyAudio()
-    for i in range(audio.get_device_count()):#list all available audio devices
-        dev = audio.get_device_info_by_index(i)
-        print((i,dev['name'],dev['maxInputChannels'])) 
-    stream = dev.open(format=FORMAT,channels=CHANNELS,
+    audio = pyaudio.PyAudio() 
+    stream = audio.open(format=FORMAT,channels=CHANNELS,
                         rate=RATE, input=True,
                         frames_per_buffer=CHUNK)
 
