@@ -3,10 +3,10 @@ import json
 import pykakasi
 import streamlit as st
 import random
-from bokeh.models.widgets import Button
-from bokeh.models import CustomJS
 from recorder import record_audio, read_audio
 import SessionState
+from bokeh.models.widgets import Button
+from bokeh.models import CustomJS
 
 
 # Wit speech API endpoint
