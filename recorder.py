@@ -9,9 +9,13 @@ def record_audio(duration, filename):
     CHUNK = 1024
 
     audio = pyaudio.PyAudio() 
-    stream = audio.open(format=FORMAT,channels=CHANNELS,
-                        rate=RATE, input=True,
-                        frames_per_buffer=CHUNK)
+    stream = audio.open(format=pyaudio.paInt16,
+                        rate=44100,
+                        channels=32, #change this to what your sound card supports
+                        input_device_index=8, #change this your input sound card index
+                        input=True,
+                        output=False,
+                        frames_per_buffer=1024)
 
 
     print("Listening...")
