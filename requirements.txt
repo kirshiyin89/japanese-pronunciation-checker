@@ -1,5 +1,5 @@
 bokeh
 pykakasi
-PyAudio
+pyaudio
 requests
 streamlit
