@@ -1,5 +1,6 @@
 bokeh == 2.2.3
 pykakasi==2.0.6
 PyAudio==0.2.11
+portaudio
 requests==2.22.0
-streamlit == 0.76.0
+streamlit == 0.77.0
