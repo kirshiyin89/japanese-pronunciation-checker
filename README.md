@@ -13,3 +13,5 @@ https://betterprogramming.pub/how-to-build-a-japanese-pronunciation-checker-with
 5. Choose a word from the predefined list and a record duration
 6. Pronounce the word and wait for the evaluation
 7. You can add more Japanese words to the words.txt file
+
+This branch is used for deployment to Heroku.
