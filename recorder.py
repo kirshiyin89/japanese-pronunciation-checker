@@ -3,13 +3,13 @@ import pyaudio
 
 def record_audio(duration, filename):
 
-    FORMAT = pyaudio.paInt16 
+    FORMAT = pyaudio.paInt16
     CHANNELS = 2
     RATE = 44100
     CHUNK = 1024
 
     audio = pyaudio.PyAudio()
-     
+
     stream = audio.open(format=FORMAT,channels=CHANNELS,
                         rate=RATE, input=True,
                         frames_per_buffer=CHUNK)
@@ -19,14 +19,14 @@ def record_audio(duration, filename):
 
     frames = []
 
-    for i in range(int(RATE / CHUNK * duration)):
+    for _ in range(int(RATE / CHUNK * duration)):
         data = stream.read(CHUNK)
         frames.append(data)
 
     print("Finished recording.")
-      
-    stream.stop_stream() 
-    stream.close() 
+
+    stream.stop_stream()
+    stream.close()
     audio.terminate()
 
     wave_file = wave.open(filename, 'wb')

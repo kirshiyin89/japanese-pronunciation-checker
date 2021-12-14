@@ -19,24 +19,20 @@ wit_access_token = 'VPEZHKEUXSSOGT4EVCO5Z5YHBBIYZSVQ'
 def recognize_speech(audiofile, duration):
     
     record_audio(duration, audiofile)
-    
+
     audio = read_audio(audiofile)
-    
+
     headers = {'authorization': 'Bearer ' + wit_access_token,
                'Content-Type': 'audio/wav'}
 
     resp = requests.post(API_ENDPOINT+API_FUNCTION_SPEECH, headers = headers,
                          data = audio)
-    
+
     data = json.loads(resp.content)
-    
+
     print(data)
-    text = ''
-    if 'text' in data:
-    	text = data['text']
-    
     # return the text from data response
-    return text
+    return data['text'] if 'text' in data else ''
 
 
 def get_romaji(duration):
